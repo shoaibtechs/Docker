@@ -1,0 +1,150 @@
+-> docker run hello-world 
+
+
+-----------Pulling image------------------
+
+-> docker pull ubuntu:16.04 //If version not mentioned it will download the latest one
+
+-----------Running the ubuntu on docker container---------------------
+
+-> docker run -it ubuntu:16.04
+
+
+-----------Currenntly containers are working----------------------
+
+->docker container ls
+
+
+-----------THe Bash shell will be attached to the running container....It simpyly means that the 
+both shells will be attachted to the same container....--------------------
+
+-> docker container exec -it b2c4a24b021e bash //kunal method 
+
+
+
+
+-----------Stop the container---------------
+
+-> docker stop #code 
+
+
+-------------The stoping error canbe solved by these two commands-------------
+-> sudo aa-remove-unknown
+-> sudo systemctl restart docker.service
+
+-------------How to see the stoping container---------------------
+
+-> docker ps  -a
+
+-
+
+-------------We can remove the container as well---------------------
+
+-> docker rm #code 
+
+
+-------------Inspecting the container_____________________
+
+-> docker inspect #code 
+
+
+------------------------------------Deleting all the containers at the same time ------------------------
+
+-> docker container prune -f 
+
+
+
+
+-----------Running servers on backgeround---------------------------------------------------------
+
+-> docker run alpine ping www.civo.com //this will ping in this teriminal 
+
+-> docker run -d alpine ping wwww.civo.com //this will ping in the background...
+
+
+--------------------------------------------------Acessing the container locally ------------------------------------------------------------
+
+-> docker run -d -p 8080:80 nginx // 8080 is the local host and 80 is the default port of the nginx....this will only work on kunals computer 
+
+
+
+---------------Using  a same container again----------------------------------------------------
+
+docker start "#code" // if the container stoped now we can start that container again 
+
+docker exec -it "same #code" //By doing this we will acess the same container....
+
+
+
+---------------------Docker Commit --------------------------------------------------------
+
+
+docker commit -m "added names.txt file" "#code"  "new_image_name" //Basically creating a new image....
+
+
+
+-------------------------Removing all the images at once ------------------------------------
+
+docker images -q // this will only give me the haso code of all images 
+
+docker rmi $(docker images -q) -f
+
+
+
+
+---------------------create a Docker file-----------------------------------
+
+
+FROM nginx:1.10.1-alpine 
+COPY src/html   /usr/share/nginx/html
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-------------------Build a image from the Docker file ---------------------------------------
+
+docker build -t  "image_name" . // this dot represents that create a image in this directory 
+
+
+-------------------Running a container---------------------------------------
+
+docker run -d -p 80:80 "hashcode" 
+
+
+
+
+
+
+
+
+
+--------------------------------------Acess the container on the terminal---------------------------------
+
+
+docker exec -it hashcodeOFcontainer /bin/bash
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,51 @@
+
+1:-Run command 
+docker run hello-world 
+
+2:- list all running containers 
+ docker ps 
+
+3:- list of all running and stopped containers 
+
+docker ps -a 
+
+4:- stop a running container 
+
+docker stop "name of container"
+
+5:-  remove a stopped container 
+
+docker rm "name of container"
+
+6:- list of images 
+
+docker images 
+
+7:- Reomve images....and make sure no container is running of that images 
+
+docker rmi "image name "
+
+
+8:- docker pull "ubuntu"
+
+only download the image from the Docker-hub and dont need to run 
+
+
+9:- docker exec "container_name" cat /etc/hosts 
+
+when the container is running and we need the information about the container :)
+
+
+10:- docker run -d ubuntu sleep 100
+
+//it will run the container in the background and will give you the promt back
+
+
+
+-----------------------------------------------Demo Docker--------------------------------------------------
+
+
+
+
+
+
